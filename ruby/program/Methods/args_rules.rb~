@@ -1,0 +1,4 @@
+def keyword_splat_first(**kargs,name:)
+end
+keyword_splat_first()
+

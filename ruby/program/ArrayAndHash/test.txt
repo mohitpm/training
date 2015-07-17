@@ -1,0 +1,26 @@
+Cows and Bulls Test Cases
+
+  "context:- words config file"
+
+    raise config error  if words config file does not exsist 
+    raise config error if words config file is empty
+    raise config error if no words to play
+    exclude word if word contains letters other than alphabets
+ 
+  "context:- random word selection"
+    Check if words are generated randomly
+  
+  "context:- guess word validation"
+    raise Invalid Guess Word if guess word is not valid and reduce the attempt count
+    
+  "context:- validate cows and bulls"
+    check if cows and bulls are valid for guess word
+  
+  "context:- winning the game"
+    win the game if guess word is equal to random word generated 
+
+  "context:- loosing the game " 
+    lose the game if chances is 0
+
+  "context:- game history"
+    check history of game is valid

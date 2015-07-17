@@ -1,0 +1,55 @@
+topics string comment entrypoint
+
+string interpolation
+  1.use '' for perfomance reason
+
+comments
+  2. =begin
+     end
+
+entry point
+  3. no main 
+
+statement delimeters
+  4. 'aasd;jfl;a sdflj as;dfj \
+     '
+
+variable scope
+
+  a. local variable
+
+  b. instance variable
+	start with @
+
+  c. class varibale
+	start with @@
+
+  d. global
+	start with @
+
+Range Operator
+  2 range operator
+  0..5 inclusive of last value o/p o 1 2 3 4 5
+  0...5 exclusive of last value o/p o 1 2 3 4
+
+operator presedence
+  Syntactical sugar and 
+  Operators &&
+
+variable caching
+  a ||=1
+
+pre/post incre/decr
+  not per/post incre/decr in ruby
+
+chomp
+  remove last character 
+
+120
+20 30 => 10 15 25
+60 40 => 100
+
+2  60 =>  1 30 31
+60 2 => 62
+
+

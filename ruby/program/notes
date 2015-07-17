@@ -1,0 +1,71 @@
+1. accept a name from user,ingnore space,
+   if the name is match => greetings or hello
+done.
+
+
+2. show the menu to user 
+   accept a character 
+   and perfome appropiate action based on input
+done.
+
+3.
+print a pattern
+
+***
+**
+*
+**
+***
+done.
+
+4.
+fibonacci
+done.
+
+5.
+different ways to write infinite loop
+done.
+
+6.
+different ways to combining 2 or more strings
+done.
+
+7.
+compare 2 random and jumbulled strings
+done.
+
+8.
+accept password input from user without displaying.
+done.
+
+9.
+Conversion between datatypes
+done.
+
+10.
+Difference between
+  ==
+  ===
+  eql?
+  equal?
+
+11.
+Write a program which accept ascii value from user and print the ascii code with
+correspoing vaule and print upto last valid ascii character 
+done.
+
+12.
+Given a string split into array and again join it
+done.
+
+13.
+find a word in a sentence case insensitive
+done.
+
+14.
+given a array of numbers print even numbers
+done.
+
+15.
+given number as input give me next number
+done.

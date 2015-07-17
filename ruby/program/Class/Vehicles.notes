@@ -1,0 +1,10 @@
+Vehicles -->
+         -->
+         -->
+         -->
+Vehicles -> have fuel, top speed, access, etc
+         -> capabalities ->  fly,fire,autopilot,covered
+is_covered?
+
+race()
+relay([cycle,car],[rocket,tank],[plane,ship])

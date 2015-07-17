@@ -1,0 +1,6 @@
+1. if using position arg and keyword arg then
+  use position arg first, then keyword arg
+
+2. default argument should come before splat argument
+
+3. keyword splat should not be before any argument

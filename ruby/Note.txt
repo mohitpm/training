@@ -1,0 +1,12 @@
+Convention to be use when coding.
+  1.indented
+  2.80 char width
+  3.proper spacing
+  4.one line block use {},more than one line block use do,end
+
+
+future plan
+array 
+hash
+block and lamda
+
