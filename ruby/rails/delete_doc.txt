@@ -1,0 +1,2 @@
+delete      => Class, Instance
+delete_all  =>  

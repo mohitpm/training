@@ -10,7 +10,7 @@ class CowsBullsGame
       puts e.message and return
     end
 
-    no_of_chances = get_no_of_chances(word) if word.length > 8
+    @no_of_chances = get_no_of_chances(word) if @word.length > 8
 
     no_of_chances.times do |attempt|
       @user_guessed_word = guess_word

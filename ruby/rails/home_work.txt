@@ -1,0 +1,7 @@
+Age int value
+Conditional Validation
+  male 18 <=> 50
+  female 16 <=> 40
+Unique email id       => User.select(:email_id).distinct
+Group by age          => User.select("age").group("age")
+git default editor vi => git config core.editor vi

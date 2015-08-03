@@ -1,0 +1,51 @@
+delete / delete_all
+find / find_by / where
+update_attribute / update
+attributes / save
+update / column
+default_scope skip
+sit / polymorphic
+
+---------------------------------------------------
+distroy     =>  causes all the associated objects to be distroyed
+                removes one or more objects from the collection by running destroy on each
+                object.
+delete      => removes one or more objects from the collection by setting their foreign keys
+                to null
+delete_all  => cause all the associated objects to be deleted directed from db.(so
+                callbacks are not called)
+
+----------------------------------------------------
+
+update => user.update(name: "mohit") => pass Hash
+          User.update_all(is_user_deleted:false)
+
+find => get record/records for given primary key     return array
+find_by => get record/records for given column name  return array
+where => can specify multiple column constraint      return ActiveRecord::Relation
+
+-----------------------------------------------------
+update_attribute  => callback , but no validation
+update_attributes => callbacks and validation
+update_column     => no callbacks and no validation
+save              => callbacks and validation , can also skip validation
+
+
+
+default_scope skip
+1. Client.unscoped.load
+2. Client.unscoped {
+
+  Client.created_before(Time.zone.now)
+}
+
+sit / polymorphic
+
+Single table inheritance
+Product table :- 
+   name , type , cost etc.
+   type => consumer , enterprice , small & businuess .
+
+Polymorphic
+  land
+  land can belong to farmer, company , goverment , individual , army etc.

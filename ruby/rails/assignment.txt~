@@ -1,0 +1,126 @@
+delete(id or array)
+  1.delete a row where primary key == id
+  2.return nos of rows deleted
+  3.active record objects are not initialize => so object callbacks are not executed
+  (:dependent association option ignored)
+  4.can delete multiple rows by passing ids
+  5.faster than destroy but skips callbacks
+
+delete_all(contions = nil)
+  1. delete record matching condition without initializing record first => hence not
+  calling destroy method & callbacks
+  2. Single SQL Query goes to db
+  3. more efficient than destroy_all
+  4. :dependent rule ignored
+  5. return nos of rows affected
+
+destroy(id)
+  1. Destroy an object(or multiple object) with given id
+  2. The object is initialize first => all callbacks and filter are fired
+  3. less efficient than ActiveRecord#delete
+  4. step -> 0. find the object (or multiple object) with given id
+             1. create a new object with attributes and call destroy on it
+
+destroy_all(condition = nil)
+  1. destroy record matching condition
+  2. initialize each record and call destroy method
+  3. callbacks are executed (:dependent :destroy also)
+  4. return -> collection of objects that where destroyed 
+               each will be frozen to reflect that no change should be maid
+  5. time consuming bcoz generating one sql query per record or more also
+  6. use delete_all if no callbacks and association
+
+
+update_attribute(name , value)
+  1. update single attribute and save the record
+  2. validation is skipped
+  3. callbacks are invoked
+  4. update_at -> column updated if available
+  5. updates all the attributes that are dirty in the object.
+
+update_attributes(attributes)
+  1. updates the attributes of model from passed hash and save the record all wrapped in
+  transcation
+  2. if object is invalid-> saving fails -> return false.
+
+update_columns(attributes)
+  1. update attrs directly into database
+  2. uses Update SQL
+  3. fastest way to update . because goes directly to db
+  4. validation => skipped
+  4. callbacks  => skipped
+  5. update_at  => not updated
+
+save
+  1. save the model
+     if model is new => record get created into db
+                 or  => existing record get update
+  2. default run validation => if any fails => action is cancel & save return false
+  3. if save(validate:fasle) => validations are bypassed
+  4. attr marked as readonly are silently ignored if record is being update
+  5. if object is not persisted save return true but object is not saved in db
+
+find 
+  1. find object with primary key
+  2. can use on to find multiple object when passed array of ids
+
+find_by(condition)
+  1. find first record matching condition
+
+where(condition)
+  1. return a new relation according to condition.
+     condition can be specified using string hash
+
+default scope skip
+  1. unscoped is used to skip default scope.
+
+
+sti example
+  1. product table
+     product can have type like consumer product, enterprise product, small and business
+     product.
+     so we can create sti with table product(id , name , type)
+     and model with ConsumerProduct, EnterpriceProduct etc
+
+polymorphic
+  1. land table (id, area,type)
+ 
+      we have land type  => farming land, defence land, residential land etc
+      we have table => farm, defence, residence etc.
+
+================ program ===================
+  ## Returns nil if no winner found
+  def winner
+   
+    ##
+    #  results format => {player_id1:score_sum1, player_id2:score_sum2, ...}
+    results = scores.group("player_id").sum("score")
+    return nil if results.empty?   
+
+    max_score_sum = results.max_by { | player_id, score_sum | score_sum }
+    player_id = max_score_sum[0]
+    Player.find(player_id)
+
+  end
+
+  ## Returns nil if no top players found
+  def top_players(number)
+   
+    raise TypeError,"#{number} is not Integer" unless number.is_a?(Integer)
+    raise ArgumentError, "negative #{number} " if number < 0
+
+    top_players = []
+    ##
+    #  results format => {player_id1:score_sum1, player_id2:score_sum2, ...}
+    results = scores.group("player_id").sum("score")
+    return nil if results.empty?
+   
+    # sort results in desc order by score_sum
+    sorted_results = results.sort { | result1, result2 | result2[1] <=> result1[1] }
+    top_results = sorted_results.first(number)
+    top_results.each do | result |
+      player_id = result[0]
+      top_players << Player.find(player_id)
+    end
+        top_players
+  end

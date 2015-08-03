@@ -1,0 +1,10 @@
+create user class
+attr_reader, attr_writer
+should be able to modify instance variable
+validate instance variable using valid?
+
+validation module
+1. Presence
+2. Range (Min , Max , exact)
+3. Numericality
+

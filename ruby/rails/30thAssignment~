@@ -1,0 +1,50 @@
+authentication - user table
+               - bcrypt
+               - seed
+               - login form
+	       - last login
+               - 
+rails guide
+use bcrypt
+
+filter multiple before        => multiple before filter allowed
+filter before only except    
+
+filter in application         => gets called by all controllers present in app
+
+filter before filter          => multiple before filter allowed for same action
+                              => example :- before_filter :index_before , only: [:index]
+                                            before_filter :index_before1, only: [:index]
+                                            before_filter :index_before2, only: [:index]
+                              => filter gets called in ascending order
+					"application before index "
+					"application before index1 "
+					"application before index2 "
+					"before_index"
+					"before_index1"
+					"before_index2"
+
+
+filter after filter           => multiple after filter allowed for same action .
+                              => example :- after_filter :index_after, only: [:index]
+                                            after_filter :index_after1, only: [:index]
+					    after_filter :index_after2, only: [:index]
+                              => filter gets called in reverse order i.e 
+					"in after index2"
+					"in after index1"
+					"in after index"
+					"application after index2"
+					"application after index1"
+					"application after index"
+
+
+In login#show view             => I have used application_helper as well as game helper method
+
+helper_controller method as helper
+
+flash persist in 2 redirect
+flash in render :action
+flash in redirect_to
+
+gem nested_form
+gem bootstrap                  => bootstrap used

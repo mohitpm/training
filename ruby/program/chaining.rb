@@ -1,6 +1,6 @@
 class Speaker
-  def self.say(what)
-    print "Hello "
+  def self.say(who)
+    print "#{who} "
     return self
   end
   def self.drink(what)
@@ -8,4 +8,8 @@ class Speaker
     return self
   end
 end
-Speaker.say("mohit").drink("wine")
+print "Enter Name :- "
+name = gets.strip
+print "Enter Liquid :- "
+liquid = gets.strip
+Speaker.say(name).drink(liquid)

@@ -37,9 +37,9 @@ class CowsBullsGame
     cows, bulls = 0, 0
     word = @word.downcase
     guess_word = guess_word.downcase
-    guess_word.each_char.each_with_index do | guess_char, index|
-      if word.include?(guess_char)
-        (word[index] == guess_char) ? bulls += 1 : cows += 1
+    word.each_char.each_with_index do | char, index|
+      if guess_word.include?(char)
+        (guess_word[index] == char) ? bulls += 1 : cows += 1
       end
     end
     return [cows, bulls]

@@ -1,0 +1,26 @@
+destroy/destroy_all/delete / delete_all
+find / find_by / where
+update_attribute / update_attributes / save
+update_column
+default_scope skip
+sit / polymorphic
+
+
+
+
+game - basket ball
+tournament => sep 15
+10 match
+
+winner of the tournament
+top five players of tournament
+
+
+rspec rails
+1. test cases on all model
+2. test cases on validation of each model
+3. test case for winner of tournament
+4. test case for top 5 players of tournament
+
+
+

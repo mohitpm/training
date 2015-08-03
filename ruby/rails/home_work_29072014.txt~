@@ -1,0 +1,34 @@
+use controller helper method in views
+nos_of_days_ago use 
+
+
+helper method used in controller => wrong practices
+
+
+what are the flash method that rail provide :notice and :alter
+
+what are the different type flash that bootstrap provide
+bootstrap integration
+
+for tournament controller => before filter in application filterb
+
+
+before_filter :get_game only: [:edit] except: [:destroy]
+2 before filter for same function.
+
+nested_form
+
+
+difference between bundle install and bundle update
+
+skiping ri documentation
+
+nested form integration
+
+1. Create a User Table with fields, email and password
+2. login 2 route to accept email and the password. will need gem call bcrypt
+3. use seed.
+4. 
+
+create a signin form which accept username and password if authentication fails show a error message on the form itself.
+else if successful save t
